@@ -2,8 +2,8 @@
   width : 10rem;
   height : 10rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;     /* 수직정렬  */
+  justify-content: center; /* 수평정렬  */
   margin : 1rem;
 
   color : white;

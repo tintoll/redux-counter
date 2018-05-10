@@ -24,7 +24,7 @@ const Counter = ({ number, color, onIncrement
       </div>
     )
  }
-Counter.PropTypes = {
+Counter.propTypes = {
   number : PropTypes.number,
   color : PropTypes.string,
   onIncrement : PropTypes.func,
