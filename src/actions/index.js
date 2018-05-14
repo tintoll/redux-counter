@@ -9,16 +9,19 @@
 
 import * as types from './ActionTypes';
 
-export const increment = () => ({
-  type : types.INCREMENT
+export const increment = (index) => ({
+  type : types.INCREMENT,
+  index
 });
 
-export const decrement = () => ({
-  type: types.DECREMENT
+export const decrement = (index) => ({
+  type: types.DECREMENT,
+  index
 });
 
-export const setColor = (color) => ({
+export const setColor = ({index, color}) => ({
   type : types.SET_COLOR,
+  index,
   color
 });
 
@@ -27,3 +30,11 @@ export const setColor = (color) => ({
   더블클릭하면 색이 랜덤하게 변하는거지만, 그렇다고 액션을 RANDOMIZE_COLOR로 만들면 안됩니다.
   왜냐하면 랜덤함수는 실행될때마다 다른 값을 반환하기때문에 순수하지 않기때문이다. 
 */
+
+export const create = (color) => ({
+  type : types.CRETE,
+  color
+});
+export const remove = () => ({
+  type : types.REMOVE
+});
