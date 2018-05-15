@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // redux 관련
 import { createStore } from 'redux';
-import reducers from './reducers';
+import reducers from './module';
 import { Provider } from 'react-redux';
 
 /*

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as actions from '../actions';
+import * as actions from '../module';
 import { connect } from 'react-redux';
 import {getRandomColor} from '../utils';
 import CounterList from '../components/CounterList';
