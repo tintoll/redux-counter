@@ -5,7 +5,7 @@ import {getRandomColor} from '../utils';
 import CounterList from '../components/CounterList';
 
 const mapStateToProps = (state) => ({
-    counters : state.counters
+    counters : state.get('counters')
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,5 +1,48 @@
 import * as types from '../actions/ActionTypes';
+import { Map, List } from 'immutable';
 
+// immutable 사용
+const initialState = Map({
+  counters : List([
+    Map({
+      color : 'black',
+      number :0
+    })
+  ])
+});
+
+function counter(state=initialState, action) {
+  const counters = state.get('counters');
+  switch (action.type) {
+    case types.CRETE:
+      return state.set('counters', counters.push(Map({
+        color : action.color,
+        number : 0
+      })))
+    case types.REMOVE:
+      return state.set('counters', counters.pop());  
+    case types.INCREMENT:
+      return state.set('counters', counters.update(
+        action.index,
+        (counter) => counter.set('number', counter.get('number')+1)
+      ));
+      
+    case types.DECREMENT:
+      return state.set('counters', counters.update(
+        action.index,
+        (counter) => counter.set('number', counter.get('number')-1)
+      )) 
+    case types.SET_COLOR:
+      return state.set('counters', counters.update(
+        action.index,
+        (counter) => counter.set('color', action.color)
+      ))   
+    default:
+      return state;
+  }
+}
+
+/*
 const initialState = {
   counters : [
     {
@@ -66,7 +109,7 @@ function counter(state = initialState, action) {
   }
 
 }
-
+*/
 export default counter;
 
 
